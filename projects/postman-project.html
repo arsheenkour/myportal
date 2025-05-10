@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman API Testing Project | Arsheen Kour</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <h1>AK</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects" class="active">Projects</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Postman API Testing & Documentation</h1>
+                <div class="project-meta">
+                    <span class="project-date">March 2025</span>
+                    <span class="project-category">API Testing & Documentation</span>
+                </div>
+            </div>
+
+            <div class="project-showcase">
+                <img src="../images/postman-project-detail.jpg" alt="Postman API Testing Project">
+            </div>
+
+            <div class="project-content">
+                <div class="project-intro">
+                    <h2>Project Overview</h2>
+                    <p>As a Developer Advocate with a background in testing, I created a comprehensive API testing project using Postman that not only validates API functionality but also serves as interactive documentation for developers.</p>
+                    
+                    <div class="project-tech-stack">
+                        <h3>Technologies Used</h3>
+                        <ul>
+                            <li><span>Postman</span> - Primary API testing tool</li>
+                            <li><span>JSON</span> - Test data creation and response validation</li>
+                            <li><span>JavaScript</span> - Test scripting</li>
+                            <li><span>Newman</span> - Command-line execution</li>
+                            <li><span>GitHub Actions</span> - CI/CD integration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://github.com/arsheenkour/api-testing" target="_blank" class="btn primary">
+                            <i class="fab fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="https://documenter.getpostman.com/" target="_blank" class="btn secondary">
+                            <i class="fas fa-external-link-alt"></i> Live Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <h2>Project Details</h2>
+                    
+                    <div class="detail-section">
+                        <h3>Challenge</h3>
+                        <p>The challenge was to create a comprehensive API testing suite that not only validated API functionality but also served as interactive documentation for developers. The goal was to demonstrate how effective test suites can double as powerful developer resources.</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Approach</h3>
+                        <p>I approached this project with a developer-first mindset, focusing on creating tests that were not only thorough but also educational. Each test includes:</p>
+                        <ul>
+                            <li>Clear and descriptive test names that communicate purpose</li>
+                            <li>Pre-request scripts that explain what's happening before each request</li>
+                            <li>Test scripts with detailed comments explaining validation logic</li>
+                            <li>Environment variables to demonstrate flexible testing across environments</li>
+                            <li>Examples showcasing both successful and error scenarios</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Key Features</h3>
+                        <h4>1. Request Validation</h4>
+                        <p>Created comprehensive test assertions to validate:</p>
+                        <ul>
+                            <li>Status codes for both successful and error responses</li>
+                            <li>Response time requirements</li>
+                            <li>JSON schema validation</li>
+                            <li>Content validation using JavaScript</li>
+                        </ul>
+                        
+                        <h4>2. Dynamic Environment Variables</h4>
+                        <p>Implemented flexible environment handling to demonstrate:</p>
+                        <ul>
+                            <li>Testing across development, staging, and production environments</li>
+                            <li>Automatic token handling and authentication</li>
+                            <li>Data persistence between requests (saving values from one response to use in subsequent requests)</li>
+                        </ul>
+                        
+                        <h4>3. Automation with Newman</h4>
+                        <p>Set up command-line automation to:</p>
+                        <ul>
+                            <li>Execute tests via the command line for CI/CD integration</li>
+                            <li>Generate detailed HTML reports after test execution</li>
+                            <li>Provide clear pass/fail results for each test case</li>
+                        </ul>
+                        
+                        <h4>4. Interactive Documentation</h4>
+                        <p>Published the collection as interactive documentation that:</p>
+                        <ul>
+                            <li>Provides a user-friendly interface for exploring API endpoints</li>
+                            <li>Includes examples of request and response bodies</li>
+                            <li>Offers detailed descriptions of all parameters and options</li>
+                            <li>Allows developers to try out API calls directly from the documentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Developer-Focused Documentation</h3>
+                        <p>A key aspect of this project was transforming technical test cases into valuable developer resources. The documentation includes:</p>
+                        <ul>
+                            <li>Getting started guides for API onboarding</li>
+                            <li>Detailed parameter explanations</li>
+                            <li>Common use cases and examples</li>
+                            <li>Troubleshooting guides for common errors</li>
+                            <li>Step-by-step tutorials for complex workflows</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Results & Impact</h3>
+                        <p>The project demonstrates how well-designed API testing can provide multiple benefits:</p>
+                        <ul>
+                            <li>Reduced onboarding time for new developers using the API</li>
+                            <li>Increased test coverage ensuring API reliability</li>
+                            <li>Automated validation in CI/CD pipelines</li>
+                            <li>Improved developer experience through clear, interactive documentation</li>
+                            <li>Testing as living documentation that evolves with the API</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Code Snippets</h3>
+                        <div class="code-block">
+                            <h4>Pre-request Script Example</h4>
+                            <pre><code>// Set up test data dynamically
+const timestamp = new Date().getTime();
+const uniqueId = `test-user-${timestamp}`;
+
+// Store in environment variables
+pm.environment.set("uniqueId", uniqueId);
+pm.environment.set("userEmail", `${uniqueId}@example.com`);
+
+console.log("Test data prepared:", uniqueId);
+</code></pre>
+
+                            <h4>Test Script Example</h4>
+                            <pre><code>// Basic response validation
+pm.test("Status code is 200 OK", function () {
+    pm.response.to.have.status(200);
+});
+
+// Response time validation
+pm.test("Response time is acceptable", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+
+// Schema validation
+const schema = {
+    "type": "object",
+    "required": ["id", "name", "email"],
+    "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" }
+    }
+};
+
+pm.test("Response schema is valid", function () {
+    const jsonData = pm.response.json();
+    pm.expect(tv4.validate(jsonData, schema)).to.be.true;
+});
+
+// Business logic validation
+pm.test("User email matches expected format", function () {
+    const jsonData = pm.response.json();
+    const expectedEmail = pm.environment.get("userEmail");
+    pm.expect(jsonData.email).to.eql(expectedEmail);
+});
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-navigation">
+                <a href="jmeter-project.html" class="prev-project">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Previous Project</span>
+                    <h4>JMeter GET Request Performance Analysis</h4>
+                </a>
+                <a href="calculator-project.html" class="next-project">
+                    <span>Next Project</span>
+                    <h4>Calculator Test Documentation Suite</h4>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Arsheen Kour</h2>
+                    <p>Developer Advocate & Software Testing Specialist</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#blog">Blog</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/arsheenkour" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/arsheenkour/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:arsheenkour47@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arsheen Kour. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
