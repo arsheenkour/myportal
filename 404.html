@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Arsheen Kour</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        
+        .error-description {
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .home-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <h1>AK</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Error Section -->
+    <section class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Page Not Found</h1>
+        <p class="error-description">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="index.html" class="btn primary home-link">Back to Home</a>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
