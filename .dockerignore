@@ -1,0 +1,28 @@
+# Git and version control
+.git
+.github
+.gitignore
+
+# Docker files (these are copied specially in the Dockerfile)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Editor files
+.vscode
+.idea
+*.sublime-*
+
+# Files not needed in production
+README.md
+LICENSE
+*.md
+*.log
+
+# Node.js files if you add them in the future
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
