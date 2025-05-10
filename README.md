@@ -1,26 +1,22 @@
-# 🧪 MyPortal – Testing Project
+# 🧪 MyPortal
 
-This repository is dedicated to testing a sample web portal using powerful tools like **Selenium**, **Postman**, and **JMeter**. The goal is to simulate real-world test scenarios and ensure the application's functionality, performance, and API reliability.
+A simple repository created to demonstrate and organize testing projects using **Selenium**, **Postman**, and **JMeter**.
 
 ---
 
 ## 📌 Overview
 
-**MyPortal** represents a hypothetical web application, and this project demonstrates how to:
-
-- Perform functional UI testing with Selenium
-- Validate API endpoints with Postman
-- Measure performance and load handling with JMeter
+This repository showcases various testing approaches for web applications. It includes test scripts, API validations, and performance testing examples created as part of learning and real-world test simulations.
 
 ---
 
-## 🧰 Tools Used
+## 🔧 Tools & Technologies
 
-- **Selenium** (Automation of UI workflows and regression testing)
-- **Postman** (API request testing, assertions, and automation collections)
-- **JMeter** (Load, stress, and performance testing)
+- **Selenium** – UI automation testing
+- **Postman** – API testing and validation
+- **JMeter** – Load and performance testing
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure (To Be Updated)
 
