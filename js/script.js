@@ -3,23 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
+    const header = document.querySelector('header');
     
     if (burger) {
         burger.addEventListener('click', () => {
             // Toggle Nav
             nav.classList.toggle('active');
             
-            // Animate Links
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
+            // Animate Burger
+            burger.classList.toggle('active');
             
-            // Burger Animation
-            burger.classList.toggle('toggle');
+            // Set aria-expanded for accessibility
+            const expanded = burger.getAttribute('aria-expanded') === 'true' || false;
+            burger.setAttribute('aria-expanded', !expanded);
         });
     }
     
@@ -30,38 +26,56 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
-                burger.classList.remove('toggle');
-                navLinks.forEach(link => link.style.animation = '');
+                burger.classList.remove('active');
             }
             
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
     
     // Active Link on Scroll
     const sections = document.querySelectorAll('section');
-    const navLinksList = document.querySelectorAll('.nav-links a');
+    const navLinksAll = document.querySelectorAll('.nav-links a');
     
-    window.addEventListener('scroll', () => {
+    function updateActiveLink() {
         let current = '';
+        const scrollPosition = window.scrollY + 100; // Small offset to trigger link earlier
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
         
-        navLinksList.forEach(link => {
+        navLinksAll.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
+            if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
         });
-    });
+    }
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); // Call on initial load
+    
+    // Header Scroll Effect
+    function headerScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', headerScroll);
     
     // Form Submission
     const contactForm = document.getElementById('contactForm');
@@ -76,20 +90,98 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message').value;
             
             if (!name || !email || !subject || !message) {
-                alert('Please fill all fields');
+                showFormAlert('Please fill in all fields', 'error');
                 return false;
             }
             
-            // Add actual form submission logic here
-            // This is just a placeholder
-            alert('Thank you for your message! I will get back to you soon.');
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFormAlert('Please enter a valid email address', 'error');
+                return false;
+            }
+            
+            // Simulate form submission - replace with actual logic
+            showFormAlert('Thank you for your message! I will get back to you soon.', 'success');
             contactForm.reset();
         });
     }
     
-    // Reveal animations
-    const revealElements = document.querySelectorAll('.reveal');
+    // Form Alert
+    function showFormAlert(message, type) {
+        const alertContainer = document.querySelector('.form-alert');
+        
+        if (!alertContainer) {
+            const formAlert = document.createElement('div');
+            formAlert.className = `form-alert ${type}`;
+            formAlert.textContent = message;
+            
+            const form = document.querySelector('.contact-form');
+            form.prepend(formAlert);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                formAlert.remove();
+            }, 5000);
+        } else {
+            alertContainer.className = `form-alert ${type}`;
+            alertContainer.textContent = message;
+        }
+    }
     
+    // Skill Tags Animation
+    const skillTags = document.querySelectorAll('.skill-tag');
+    skillTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Create animation effect for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+    
+    // Add animation to timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-20px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+        }, 200 * index);
+    });
+    
+    // Add animation to education items
+    const eduItems = document.querySelectorAll('.edu-item');
+    eduItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+    
+    // Add scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
     function reveal() {
         revealElements.forEach(element => {
             const windowHeight = window.innerHeight;
@@ -105,16 +197,16 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', reveal);
     reveal(); // Call on initial load
     
-    // Add skill animation
-    const skillTags = document.querySelectorAll('.skill-tag');
-    
-    skillTags.forEach(tag => {
-        tag.addEventListener('mouseover', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
+    // Add typing effect to hero title
+    const heroTitle = document.querySelector('.hero h1');
+    if (heroTitle) {
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
         
-        tag.addEventListener('mouseout', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
+        for (let i = 0; i < text.length; i++) {
+            setTimeout(() => {
+                heroTitle.textContent += text.charAt(i);
+            }, 100 * i);
+        }
+    }
 });
