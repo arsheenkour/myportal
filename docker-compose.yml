@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arsheen-portfolio
+    ports:
+      - "8080:80"
+    volumes:
+      # For development: mount the source files to enable hot-reloading
+      # Comment out this line for production
+      - ./:/usr/share/nginx/html
+      # This volume ensures the nginx config is not overwritten by the above mount
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+    # Healthcheck to ensure the container is running properly
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
