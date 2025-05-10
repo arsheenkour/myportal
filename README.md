@@ -1,4 +1,4 @@
-# MyPortal - Developer Advocate Portfolio Site
+# Arsheen Kour Portal Design - An Active Community Contributor
 
 A modern, responsive portfolio website built for showcasing development and technical advocacy skills. This project uses a clean HTML/CSS design with Docker containerization for easy deployment.
 
