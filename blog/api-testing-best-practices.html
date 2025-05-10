@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practices for API Testing: A Developer's Guide | Arsheen Kour</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <h1>AK</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#blog" class="active">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="post-header">
+                <h1>Best Practices for API Testing: A Developer's Guide</h1>
+                <div class="post-meta">
+                    <span class="post-date">April 15, 2025</span>
+                    <span class="post-category">API Testing</span>
+                    <span class="post-author">Arsheen Kour</span>
+                </div>
+            </div>
+
+            <div class="post-featured-image">
+                <img src="../images/blog-1-large.jpg" alt="API Testing Best Practices">
+            </div>
+
+            <div class="post-content">
+                <div class="post-intro">
+                    <p>As APIs become the backbone of modern software applications, ensuring their reliability, performance, and security is more crucial than ever. In this guide, I'll share essential best practices for API testing that balance thoroughness with efficiency, helping you build more robust, developer-friendly APIs.</p>
+                </div>
+
+                <div class="post-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">Introduction to API Testing</a></li>
+                        <li><a href="#test-planning">Test Planning and Strategy</a></li>
+                        <li><a href="#functional-testing">Functional Testing Best Practices</a></li>
+                        <li><a href="#automated-testing">Automated Testing Approaches</a></li>
+                        <li><a href="#performance-testing">Performance and Load Testing</a></li>
+                        <li><a href="#security-testing">Security Testing Essentials</a></li>
+                        <li><a href="#documentation">Documentation as Testing</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ul>
+                </div>
+
+                <div id="introduction" class="post-section">
+                    <h2>Introduction to API Testing</h2>
+                    <p>API testing differs fundamentally from traditional UI testing. While UI testing focuses on user interactions and visual elements, API testing targets the application's core functionality at the service level. This testing approach offers several advantages:</p>
+                    
+                    <ul>
+                        <li><strong>Early bug detection:</strong> Issues can be identified before UI development begins</li>
+                        <li><strong>Faster execution:</strong> API tests typically run much faster than UI tests</li>
+                        <li><strong>Greater stability:</strong> Not impacted by UI changes or rendering issues</li>
+                        <li><strong>Language-agnostic:</strong> Front-end technology choices don't affect API tests</li>
+                        <li><strong>Integration validation:</strong> Verifies how different services work together</li>
+                    </ul>
+                    
+                    <p>For developers, quality API testing isn't just about catching bugs?it's about understanding how APIs behave in various scenarios, ensuring backward compatibility, and creating documentation that helps other developers succeed.</p>
+                </div>
+
+                <div id="test-planning" class="post-section">
+                    <h2>Test Planning and Strategy</h2>
+                    <p>Before writing a single test case, it's crucial to develop a comprehensive testing strategy. Here's how to approach API test planning:</p>
+
+                    <h3>1. Define Clear Testing Objectives</h3>
+                    <p>Start by outlining what you aim to validate through your API tests:</p>
+                    <ul>
+                        <li>Functional correctness (Does the API do what it's supposed to?)</li>
+                        <li>Reliability (Does it handle errors gracefully?)</li>
+                        <li>Performance (Does it respond within acceptable timeframes?)</li>
+                        <li>Security (Is it protected against common vulnerabilities?)</li>
+                        <li>Usability (Is it intuitive for developers to understand and implement?)</li>
+                    </ul>
+
+                    <h3>2. Prioritize Test Cases</h3>
+                    <p>Not all API endpoints require the same level of testing. Prioritize based on:</p>
+                    <ul>
+                        <li><strong>Criticality:</strong> Core business functionality deserves more extensive testing</li>
+                        <li><strong>Complexity:</strong> Complex operations need more test cases</li>
+                        <li><strong>Usage frequency:</strong> Heavily used endpoints should receive priority</li>
+                        <li><strong>Risk:</strong> Endpoints handling sensitive data require thorough testing</li>
+                    </ul>
+                </div>
+
+                <div id="functional-testing" class="post-section">
+                    <h2>Functional Testing Best Practices</h2>
+                    <p>Functional testing verifies that each API endpoint behaves as expected. Here are best practices to ensure comprehensive functional testing:</p>
+
+                    <h3>1. Test CRUD Operations Thoroughly</h3>
+                    <p>For each resource endpoint, test all applicable operations:</p>
+                    <ul>
+                        <li><strong>Create:</strong> Verify successful creation with valid data</li>
+                        <li><strong>Read:</strong> Confirm retrieval of correct data</li>
+                        <li><strong>Update:</strong> Test partial and complete updates</li>
+                        <li><strong>Delete:</strong> Ensure proper resource removal</li>
+                    </ul>
+
+                    <h3>2. Test Response Status Codes</h3>
+                    <p>Verify appropriate status codes for different scenarios:</p>
+                    <ul>
+                        <li><strong>2xx (Success):</strong> 200 OK, 201 Created, 204 No Content</li>
+                        <li><strong>4xx (Client Error):</strong> 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found</li>
+                        <li><strong>5xx (Server Error):</strong> 500 Internal Server Error, 503 Service Unavailable</li>
+                    </ul>
+
+                    <div class="code-example">
+                        <h4>Example: Boundary Value Test Cases</h4>
+<pre><code>// Test cases for /api/users endpoint with page_size parameter
+// Scenario: page_size accepts values between 1-100, default 20
+
+// Valid boundary cases
+test("page_size=1 returns exactly 1 user", async () => {...});
+test("page_size=100 returns exactly 100 users", async () => {...});
+test("page_size omitted returns default (20) users", async () => {...});
+
+// Invalid boundary cases
+test("page_size=0 returns 400 Bad Request", async () => {...});
+test("page_size=101 returns 400 Bad Request", async () => {...});</code></pre>
+                    </div>
+                </div>
+
+                <div id="automated-testing" class="post-section">
+                    <h2>Automated Testing Approaches</h2>
+                    <p>Automating API tests provides consistency, repeatable validation, and integration into CI/CD pipelines. Here are strategies for effective API test automation:</p>
+
+                    <h3>1. Choose the Right Testing Tools</h3>
+                    <p>Select tools based on your specific needs:</p>
+                    <ul>
+                        <li><strong>Postman/Newman:</strong> Great for collaborative testing, documentation, and CI/CD integration</li>
+                        <li><strong>REST Assured:</strong> Java library for RESTful API testing</li>
+                        <li><strong>Supertest:</strong> JavaScript library for testing Node.js HTTP servers</li>
+                        <li><strong>Karate DSL:</strong> Combines API test automation, mocks, performance, and UI testing</li>
+                    </ul>
+
+                    <div class="code-example">
+                        <h4>Example: BDD-Style API Test using Cucumber</h4>
+<pre><code>Feature: User API
+
+  Scenario: Create a new user successfully
+    Given I have valid authentication credentials
+    And I have a valid user payload
+    When I send a POST request to "/api/users"
+    Then the response status code should be 201
+    And the response should contain a user ID
+    And the response should contain the same name I sent</code></pre>
+                    </div>
+                </div>
+
+                <div id="performance-testing" class="post-section">
+                    <h2>Performance and Load Testing</h2>
+                    <p>Performance testing ensures your API can handle expected and peak loads. Here are key considerations:</p>
+
+                    <h3>1. Define Performance Metrics</h3>
+                    <p>Establish clear metrics to measure API performance:</p>
+                    <ul>
+                        <li><strong>Response time:</strong> Time taken to process a request and return a response</li>
+                        <li><strong>Throughput:</strong> Number of requests processed per unit of time</li>
+                        <li><strong>Error rate:</strong> Percentage of requests resulting in errors</li>
+                        <li><strong>Resource utilization:</strong> CPU, memory, network usage</li>
+                    </ul>
+
+                    <h3>2. Performance Testing Tools</h3>
+                    <p>Popular tools for API performance testing include:</p>
+                    <ul>
+                        <li><strong>JMeter:</strong> Open-source tool for load and performance testing</li>
+                        <li><strong>Gatling:</strong> Scala-based load testing tool with excellent reporting</li>
+                        <li><strong>k6:</strong> Modern load testing tool for developers</li>
+                        <li><strong>Locust:</strong> Python-based, user-friendly load testing tool</li>
+                    </ul>
+                </div>
+
+                <div id="security-testing" class="post-section">
+                    <h2>Security Testing Essentials</h2>
+                    <p>Security testing protects your API from vulnerabilities and attacks. Focus on these areas:</p>
+
+                    <h3>1. Authentication and Authorization</h3>
+                    <p>Verify security mechanisms function correctly:</p>
+                    <ul>
+                        <li>Test access without authentication/authorization</li>
+                        <li>Verify token validation and expiration</li>
+                        <li>Test role-based access controls</li>
+                        <li>Check for authentication bypasses</li>
+                    </ul>
+
+                    <h3>2. Input Validation and Sanitization</h3>
+                    <p>Test resistance to injection attacks:</p>
+                    <ul>
+                        <li>SQL injection attempts</li>
+                        <li>Cross-site scripting (XSS) payloads</li>
+                        <li>Command injection</li>
+                        <li>XML/JSON injection</li>
+                    </ul>
+                </div>
+
+                <div id="documentation" class="post-section">
+                    <h2>Documentation as Testing</h2>
+                    <p>API documentation isn't separate from testing?it can be an integral part of your test strategy:</p>
+
+                    <h3>1. OpenAPI/Swagger Integration</h3>
+                    <p>Leverage OpenAPI specifications for testing:</p>
+                    <ul>
+                        <li>Generate test cases from OpenAPI specifications</li>
+                        <li>Validate API responses against schema definitions</li>
+                        <li>Keep documentation and tests in sync</li>
+                    </ul>
+
+                    <h3>2. Interactive Documentation</h3>
+                    <p>Create living documentation that doubles as a testing tool:</p>
+                    <ul>
+                        <li>Use tools like Postman or Swagger UI that allow documentation and testing</li>
+                        <li>Include example requests and responses</li>
+                        <li>Provide test environments for developers to experiment</li>
+                    </ul>
+                </div>
+
+                <div id="conclusion" class="post-section">
+                    <h2>Conclusion</h2>
+                    <p>Effective API testing is a balance of thoroughness and efficiency. By implementing these best practices, you'll create more reliable APIs while generating documentation and examples that improve the developer experience.</p>
+                    
+                    <p>Remember these key takeaways:</p>
+                    <ul>
+                        <li>Plan your testing strategy before writing tests</li>
+                        <li>Test beyond the happy path?edge cases reveal the most critical issues</li>
+                        <li>Automate tests for consistency and CI/CD integration</li>
+                        <li>Consider performance and security as fundamental, not optional</li>
+                        <li>Use testing to improve documentation, and documentation to improve testing</li>
+                    </ul>
+                    
+                    <p>By approaching API testing with these developer-focused practices, you'll create APIs that are both robust and a joy to use.</p>
+                </div>
+            </div>
+
+            <div class="post-footer">
+                <div class="author-bio">
+                    <img src="../images/profile-small.jpg" alt="Arsheen Kour">
+                    <div class="bio-content">
+                        <h3>About the Author</h3>
+                        <p>Arsheen Kour is a Developer Advocate and Software Testing Specialist with a passion for creating exceptional developer experiences. With expertise in API testing and documentation, she bridges the gap between testing and development to create more robust, user-friendly software.</p>
+                    </div>
+                </div>
+
+                <div class="share-post">
+                    <h3>Share this Post</h3>
+                    <div class="social-sharing">
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </div>
+                </div>
+
+                <div class="related-posts">
+                    <h3>Related Posts</h3>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <img src="../images/blog-2-small.jpg" alt="JMeter Performance Testing">
+                            <h4>Getting Started with Performance Testing using JMeter</h4>
+                            <a href="jmeter-performance-testing.html" class="read-more">Read More</a>
+                        </div>
+                        <div class="related-card">
+                            <img src="../images/blog-3-small.jpg" alt="Technical Documentation">
+                            <h4>The Art of Technical Documentation: Writing for Developers</h4>
+                            <a href="technical-documentation-tips.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Arsheen Kour</h2>
+                    <p>Developer Advocate & Software Testing Specialist</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#skills">Skills</a></li>
+                        <li><a href="../index.html#projects">Projects</a></li>
+                        <li><a href="../index.html#blog">Blog</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/arsheenkour" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/arsheenkour/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:arsheenkour47@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arsheen Kour. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
