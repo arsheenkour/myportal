@@ -8,9 +8,10 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY . /usr/share/nginx/html/
 
 # Remove the Dockerfile and nginx.conf from the final image to keep it clean
-RUN rm /usr/share/nginx/html/Dockerfile && \
-    rm /usr/share/nginx/html/nginx.conf && \
-    rm -rf /usr/share/nginx/html/.git
+# Use -f flag to avoid errors if files don't exist
+RUN rm -f /usr/share/nginx/html/Dockerfile && \
+    rm -f /usr/share/nginx/html/nginx.conf && \
+    rm -rf /usr/share/nginx/html/.git 2>/dev/null || true
 
 # Expose port 80
 EXPOSE 80
